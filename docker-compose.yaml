@@ -1,0 +1,32 @@
+version: '3'
+services:
+  database: 
+    image:  mysql:5.7
+    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - ./.data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: root
+      MYSQL_DATABASE: service
+    ports:
+      - 3306
+    networks:
+      - internal
+  service.session:
+    build:
+      context: ./service.session/.
+      dockerfile: dev.dockerfile
+    volumes:
+      - ./service.session/.:/usr/src/app/
+    ports:
+        - 5001:5001
+    depends_on:
+      - database
+    environment:
+      PORT: 5001
+    command: npm start 
+    networks:
+      - internal 
+networks:
+  internal:

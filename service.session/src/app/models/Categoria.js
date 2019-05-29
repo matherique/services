@@ -6,5 +6,5 @@ export default (sequelize, DataType) => {
     valor_media_hora: DataType.DOUBLE(10, 2),
   });
 
-    return Categoria;
+  return Categoria;
 };

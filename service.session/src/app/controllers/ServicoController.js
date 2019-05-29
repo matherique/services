@@ -19,9 +19,7 @@ class ServicoController {
   }
 
   async create(servico) {
-    const result = await Servico.create(servico).catch(
-      err => new Error(err)
-    );
+    const result = await Servico.create(servico).catch(err => new Error(err));
     return result;
   }
 

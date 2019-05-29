@@ -93,5 +93,14 @@ export default gql`
       cliente_id: ID!
     ): Documento!
     deletarDocumento(id: ID!): Response!
-  }
+
+    cadastrarServico(
+      natureza: String!
+      data: String!
+      status: String!
+      profissional_id: String!
+      cliente_id: Int!
+      categoria: Categoria!
+    ): Servico!  
+  
 `;

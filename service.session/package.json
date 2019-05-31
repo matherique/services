@@ -6,7 +6,8 @@
   "scripts": {
     "prestart": "npx sequelize-esm db:migrate",
     "start": "npx nodemon --exec babel-node src/index.js",
-    "dev": "npx nodemon -r @std/esm src/index.js"
+    "dev": "npx nodemon -r @std/esm src/index.js",
+    "test": "jest --detectOpenHandles --forceExit"
   },
   "keywords": [],
   "author": "",
@@ -42,6 +43,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-hooks": "^1.6.0",
+    "jest": "^24.8.0",
     "nodemon": "^1.18.11",
     "prettier": "^1.17.0"
   },

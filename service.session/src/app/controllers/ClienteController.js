@@ -36,3 +36,4 @@ class ClienteController {
 }
 
 export default new ClienteController();
+

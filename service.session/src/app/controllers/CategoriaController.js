@@ -16,6 +16,7 @@ class CategoriaController {
   }
 
   async create(categoria) {
+    console.log(categoria);
     const result = await Categoria.create(categoria).catch(
       err => new Error(err)
     );

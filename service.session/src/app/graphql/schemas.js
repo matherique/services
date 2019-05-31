@@ -1,6 +1,7 @@
 import { gql } from 'apollo-server';
 
-// TODO: escrever os types, querys e mutations de categoria e servico
+
+/* eslint-disable */
 
 export default gql`
   type Cliente {
@@ -19,7 +20,7 @@ export default gql`
     nome_categoria: String!
     conselho_federal: String!
     ramo_atuacao: String!
-    valor_media_hora: String!
+    valor_medio_hora: String!
   }
 
   type Servico {
@@ -57,50 +58,23 @@ export default gql`
   }
 
   type Mutation {
-    cadastrarCliente(
-      nome: String!
-      nascimento: String!
-      email: String!
-      usuario: String!
-      senha: String!
-      status: String!
-      classificacao: String
-      foto_perfil: String
-    ): Cliente!
-    atualizarCliente(
-      id: ID!
-      nome: String!
-      nascimento: String!
-      email: String!
-      usuario: String!
-      senha: String!
-      status: String!
-      classificacao: String
-      foto_perfil: String
-    ): Response!
+    cadastrarCliente(nome: String! nascimento: String! email: String! usuario: String! senha: String! status: String! classificacao: String foto_perfil: String ): Cliente!
+    atualizarCliente(id: ID! nome: String! nascimento: String! email: String! usuario: String! senha: String! status: String! classificacao: String foto_perfil: String ): Response!
     deletarCliente(id: ID!): Response!
-    cadastrarDocumento(
-      comprovante_residencia: String!
-      foto_camera: String!
-      documento_identificado: String!
-      cliente_id: ID!
-    ): Documento!
-    atualizarDocumento(
-      id: ID!
-      comprovante_residencia: String!
-      foto_camera: String!
-      documento_identificado: String!
-      cliente_id: ID!
-    ): Documento!
+
+    cadastrarDocumento(comprovante_residencia: String! foto_camera: String! documento_identificado: String! cliente_id: ID! ): Documento!
+    atualizarDocumento(id: ID! comprovante_residencia: String! foto_camera: String! documento_identificado: String! cliente_id: ID! ): Documento!
     deletarDocumento(id: ID!): Response!
 
-    cadastrarServico(
-      natureza: String!
-      data: String!
-      status: String!
-      profissional_id: String!
-      cliente_id: Int!
-      categoria: Categoria!
-    ): Servico!  
-  
+    cadastrarServico(natureza: String! data: String! status: String! profissional_id: String! cliente_id: Int! categoria_id: Int! ): Servico! 
+    atualizarServico(id: ID! natureza: String! data: String! status: String! profissional_id: String! cliente_id: Int! categoria_id: Int! ): Response!
+    deletarServico(id: ID!): Response!
+
+    cadastrarCategoria(nome_categoria: String! conselho_federal: String! ramo_atuacao: String! valor_medio_hora: String!): Categoria!
+      atualizarCategoria(id: ID! nome_categoria: String! conselho_federal: String! ramo_atuacao: String! valor_medio_hora: String!): Response!
+    deletarCategoria(id: ID!): Response!
+  }
 `;
+
+
+

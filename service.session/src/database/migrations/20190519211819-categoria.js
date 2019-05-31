@@ -1,6 +1,6 @@
 export default {
   async up(queryInterface, Sequelize) {
-    const up = await queryInterface.createTable('servico', {
+    const up = await queryInterface.createTable('categoria', {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -27,7 +27,7 @@ export default {
     return up;
   },
   async down(queryInterface, Sequelize) {
-    const drop = await queryInterface.dropTable('servico');
+    const drop = await queryInterface.dropTable('categoria');
     return drop;
   },
 };

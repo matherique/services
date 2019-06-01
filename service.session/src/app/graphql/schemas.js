@@ -1,6 +1,5 @@
 import { gql } from 'apollo-server';
 
-
 /* eslint-disable */
 
 export default gql`
@@ -20,7 +19,7 @@ export default gql`
     nome_categoria: String!
     conselho_federal: String!
     ramo_atuacao: String!
-    valor_medio_hora: String!
+    valor_medio_hora: String!  
   }
 
   type Servico {
@@ -71,7 +70,7 @@ export default gql`
     deletarServico(id: ID!): Response!
 
     cadastrarCategoria(nome_categoria: String! conselho_federal: String! ramo_atuacao: String! valor_medio_hora: String!): Categoria!
-      atualizarCategoria(id: ID! nome_categoria: String! conselho_federal: String! ramo_atuacao: String! valor_medio_hora: String!): Response!
+    atualizarCategoria(id: ID! nome_categoria: String! conselho_federal: String! ramo_atuacao: String! valor_medio_hora: String!): Response!
     deletarCategoria(id: ID!): Response!
   }
 `;

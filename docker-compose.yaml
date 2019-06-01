@@ -16,7 +16,6 @@ services:
   service.session:
     build:
       context: ./service.session/.
-      dockerfile: dev.dockerfile
     volumes:
       - ./service.session/.:/usr/src/app/
     ports:
@@ -25,6 +24,7 @@ services:
       - database
     environment:
       PORT: 5001
+      NODE_ENV: ${NODE_ENV:-development}
     command: npm start 
     networks:
       - internal 
